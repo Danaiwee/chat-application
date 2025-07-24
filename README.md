@@ -1,4 +1,4 @@
-![chatty_page-0001](https://github.com/user-attachments/assets/1245ab70-65a7-437c-942b-c2621af9cc5e)
+![403746230-1245ab70-65a7-437c-942b-c2621af9cc5e](https://github.com/user-attachments/assets/ddbcb48e-895d-4054-81a5-65d8dae337c1)
 
 # Chat Application (MERN Stack)
 
