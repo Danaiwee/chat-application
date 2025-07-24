@@ -54,9 +54,6 @@ export const sendMessage = async (req, res) => {
         //access to my id
         const senderId = req.user._id;
 
-        console.log("Incoming message data:", { text, image });
-        console.log("Receiver ID:", receiverId, "Sender ID:", senderId); //for test
-
         //check if user send image or not
         let imageUrl;
         // then upload image to cloudary

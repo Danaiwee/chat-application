@@ -13,19 +13,15 @@ import {Toaster} from 'react-hot-toast';
 
 const App = () => {
   //1.check auth and fetch auth data
-  const {authUser, checkAuth, isCheckingAuth, onlineUsers} = useAuthStore();
+  const {authUser, checkAuth, isCheckingAuth} = useAuthStore();
 
   //3.for change the theme
   const { theme } = useThemeStore();
-
-  console.log({ onlineUsers });
-  
-  
+    
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
   
-  console.log({authUser});
 
   //2.create some animatation while loading authUser
   if(isCheckingAuth && !authUser) return (
