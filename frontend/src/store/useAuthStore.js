@@ -44,7 +44,7 @@ export const useAuthStore = create((set, get) => ({
             
             get().connectSocket();
         } catch (error) {
-            toast.error(error.response.data.message);
+            console.log(error.response.data.message);
 
         } finally {
             set({isSigningUp: false});
@@ -61,7 +61,7 @@ export const useAuthStore = create((set, get) => ({
 
             get().connectSocket();
         } catch (error) {
-            toast.error(error.response.data.message);
+            console.log(error.response.data.message);
 
         } finally {
             set({isLoggingIn: false});
@@ -76,7 +76,7 @@ export const useAuthStore = create((set, get) => ({
 
             get().disconnectSocket();
         } catch (error) {
-            toast.error(error.response.data.message);
+            console.log(error.response.data.message);
         }
     },
 
@@ -89,7 +89,6 @@ export const useAuthStore = create((set, get) => ({
 
         } catch (error) {
             console.log('error in update profile: ', error);
-            toast.error(error.response.data.message);
         } finally {
             set({isUpdatingProfile: false});
         }
