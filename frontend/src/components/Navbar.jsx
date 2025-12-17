@@ -3,7 +3,6 @@ import { useAuthStore } from "../store/useAuthStore"
 import { LogOut, MessageSquare, Settings, User } from "lucide-react";
 
 const Navbar = () => {
-  //get logout and authUser state
   const {logout, authUser} = useAuthStore();
 
   return (

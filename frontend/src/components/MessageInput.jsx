@@ -29,6 +29,10 @@ const MessageInput = () => {
       setImagePreview(reader.result)
     };
     reader.readAsDataURL(file);
+
+    //example of reader.result
+    //"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAACdl1LhAAAABmJLR0QA/wD/AP+gvaeT..."
+
   };
 
   const removeImage = () => {
@@ -41,7 +45,7 @@ const MessageInput = () => {
     if (!text.trim() && !imagePreview) return;
 
     try {
-      sendMessage({
+      await sendMessage({
         text: text.trim(),
         image: imagePreview,
       });
@@ -97,11 +101,11 @@ const MessageInput = () => {
 
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
+            className={`btn btn-circle
                      ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
             onClick={() => fileInputRef.current?.click()}
           >
-            <Image size={20} />
+            <Image size={20} /> 
           </button>
         </div>
         <button

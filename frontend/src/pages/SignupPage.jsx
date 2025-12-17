@@ -6,22 +6,16 @@ import AuthImagePattern from '../components/AuthImagePattern';
 import toast from "react-hot-toast";
 
 const SignupPage = () => {
-  //use to show password
   const [showPassword, setShowPassword] = useState(false);
-
-  //use to store register data
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     password: ''
   });
 
-  //use to show loading when click signup
   const {signup, isSigningUp} = useAuthStore();
 
-  //function for validate signup form
   const validateForm = () => {
-    //check datas (fullname, email, password)
     if(!formData.fullName.trim()){
      toast.error("Full name is require");
      return false;
@@ -35,7 +29,7 @@ const SignupPage = () => {
       return false;
     }
     if(!formData.password) {
-      toast.error("Invalid email format");
+      toast.error("Invalid password");
       return false;
     }
     if(formData.password.length < 6) {
@@ -46,17 +40,12 @@ const SignupPage = () => {
     return true;
   }
 
-  //function for submit data
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //receive data from validateForm
     const success = validateForm();
 
     if(success) signup(formData);
   }
-
-
 
   return (
     <div className='min-h-screen grid lg:grid-cols-2'>
@@ -180,7 +169,7 @@ const SignupPage = () => {
 
       {/*right side page*/}
       <AuthImagePattern
-        title='Join out community'
+        title='Join our community'
         subtitle='Connect with friencs, share moments, and stay in touch with your loved ones'
       />
     </div>

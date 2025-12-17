@@ -28,7 +28,7 @@ const Sidebar = () => {
           <User className="size-6" />
           <span className="font-medium hidden lg:block">Contacts</span>
         </div>
-        {/*TODO: online filter toggle*/}
+        {/*online filter toggle*/}
         <div className='mt-3 hidden lg:flex items-center gap-2'>
           <label className='cursor-pointer flex items-center gap-2'>
             <input 
@@ -49,7 +49,7 @@ const Sidebar = () => {
             onClick={() => setSelectedUser(user)}
             className={`w-full p-3 flex items-center gap-3 lg:items-start hover:bg-base-300 transition-colors ${
               selectedUser?._id === user._id
-                ? "bg-base-300 ring-1 rin-base-300"
+                ? "bg-base-300 ring-1 ring-base-300"
                 : ""
             }`}
           >
